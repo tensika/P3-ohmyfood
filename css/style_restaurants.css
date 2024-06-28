@@ -163,12 +163,12 @@ main {
 .menu__favorite .fas:hover {
   /*pour avoir la couleur sur le cœur au passage de la souris ou du stylet.*/
   opacity: 1;
-  color: transparent; /*Cela me permet de rendre la couleur noire du cœur transparente.*/
-  background-clip: text; /*Grâce à cette propriété, j'ai pu limiter l'affichage du dégradé au texte, dans ce cas-ci juste pour remplir le cœur.*/
+  color: transparent; 
+  background-clip: text; 
   background-image: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
 }
 
-/*Permet de gérer la checkbox et le changement de couleur du cœur lorsque celle-ci est cochée.*/
+
 .favorite-checkbox {
   display: none;
 }
