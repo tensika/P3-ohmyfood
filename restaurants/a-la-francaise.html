@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OhMyFood - Restaurant "À la Française"</title>
+    <link rel="stylesheet" href="../css/style_restaurants.css" />
+    <script
+      src="https://kit.fontawesome.com/2aa3c7d5e5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--HEADER-->
+    <header class="header">
+      <a href="../index.html" class="header__back"
+        ><i class="fa-solid fa-arrow-left"></i
+      ></a>
+      <a href="../index.html" class="header__logo">
+        <img
+          src="../assets/images/logo/ohmyfood@2x.svg"
+          alt="Logo du site Ohmyfood"
+        />
+      </a>
+    </header>
+    <!--END OF HEADER-->
+    <!--MAIN-->
+    <main>
+      <!--BANNER-->
+      <div class="banner">
+        <img
+          src="../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+          alt="Image d'un plat du restaurant à la française"
+          class="banner__img"
+        />
+      </div>
+      <!--END OF BANNER-->
+      <!--MENU-->
+      <div class="menu">
+        <!--MENU HEADER-->
+        <section class="menu__header">
+          <h1 class="menu__title">À la française</h1>
+          <div class="menu__favorite">
+            <input type="checkbox" id="like" class="favorite-checkbox" />
+            <label for="like">
+              <i class="far fa-heart"></i>
+              <i class="fas fa-heart"></i>
+            </label>
+          </div>
+        </section>
+        <!--END OF MENU HEADER-->
+        <!--CATEGORIES OF MENU-->
+        <section class="categories">
+          <ul class="category anim1">
+            <li>
+              <h2 class="category__title">Entrées</h2>
+              <hr class="category__title__underline" />
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">Tartare de poulpe acidulé</h3>
+                <p class="category__card__subtitle">Aux zestes d'orange</p>
+              </div>
+              <div class="category__card__price">25€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">
+                  Velouté de légumes d'antan
+                </h3>
+                <p class="category__card__subtitle">
+                  Carotte, panais, topinambour
+                </p>
+              </div>
+              <div class="category__card__price">35€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">Soupe à l'oignon</h3>
+                <p class="category__card__subtitle">Revisitée</p>
+              </div>
+              <div class="category__card__price">20€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+          </ul>
+          <ul class="category anim2">
+            <li>
+              <h2 class="category__title">Plats</h2>
+              <hr class="category__title__underline" />
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">Coquilles Saint-Jacques</h3>
+                <p class="category__card__subtitle">
+                  Accompagnées d'une purée de panais
+                </p>
+              </div>
+              <div class="category__card__price">40€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">Magret de canard</h3>
+                <p class="category__card__subtitle">
+                  Et parmentier de pommes de terre
+                </p>
+              </div>
+              <div class="category__card__price">35€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">
+                  Pigeonneau d’Ille-et-Vilaine
+                </h3>
+                <p class="category__card__subtitle">
+                  Sur son lit de gnocchis aux légumes
+                </p>
+              </div>
+              <div class="category__card__price">44€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+          </ul>
+          <ul class="category anim3">
+            <li>
+              <h2 class="category__title">Desserts</h2>
+              <hr class="category__title__underline" />
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">
+                  Pétales de violettes glacés
+                </h3>
+                <p class="category__card__subtitle">Et purée de noisettes</p>
+              </div>
+              <div class="category__card__price">18€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">Fondant au chocolat</h3>
+                <p class="category__card__subtitle">Revisité</p>
+              </div>
+              <div class="category__card__price">22€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+            <li class="category__card">
+              <div class="category__card__titles">
+                <h3 class="category__card__title">Millefeuille croustillant</h3>
+                <p class="category__card__subtitle">
+                  Myrtilles et pâte d’amande
+                </p>
+              </div>
+              <div class="category__card__price">23€</div>
+              <div class="category__card__check">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+            </li>
+          </ul>
+        </section>
+        <div class="btn anim4">
+          <a href="#" class="btn__command">Commander</a>
+        </div>
+      </div>
+    </main>
+    <!--END OF MAIN-->
+    <!--FOOTER-->
+    <footer>
+      <div class="logo">Ohmyfood</div>
+      <ul>
+        <li>
+          <i class="fa-solid fa-utensils"></i
+          ><a href="#">Proposer un restaurant</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-handshake-angle"></i
+          ><a href="#">Devenir partenaire</a>
+        </li>
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="mailto:exemple@domaine.com">Contact</a></li>
+      </ul>
+    </footer>
+    <!--END OF FOOTER-->
+  </body>
+</html>

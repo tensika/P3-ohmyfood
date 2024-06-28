@@ -1,0 +1,441 @@
+@charset "UTF-8";
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes onset_time {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/*Header*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 63px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.header__back {
+  position: absolute;
+  left: 0;
+  font-size: 30px;
+  padding: 17px 0 16px 17px;
+  color: black;
+}
+.header__logo {
+  display: flex;
+}
+
+/*END OF HEADER*/
+/*MAIN*/
+main {
+  background-color: white;
+}
+
+/*BANNER*/
+.banner__img {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+}
+
+/*END OF BANNER*/
+/*MENU*/
+.menu {
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  margin-top: -55px;
+  background-color: #f6f6f6;
+  z-index: 10;
+  /*MENU HEADER*/
+}
+.menu__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 31px 17px 42px 17px;
+}
+.menu__title {
+  font-size: 28px;
+  font-family: "Shrikhand";
+}
+.menu__favorite {
+  margin-top: -20px;
+}
+.menu__favorite i {
+  position: absolute;
+  right: 24px;
+  font-size: 22px;
+  color: #101010;
+}
+.menu__favorite .fas {
+  opacity: 0;
+}
+.menu__favorite .fas:hover {
+  /*pour avoir la couleur sur le cœur au passage de la souris ou du stylet.*/
+  opacity: 1;
+  color: transparent; /*Cela me permet de rendre la couleur noire du cœur transparente.*/
+  background-clip: text; /*Grâce à cette propriété, j'ai pu limiter l'affichage du dégradé au texte, dans ce cas-ci juste pour remplir le cœur.*/
+  background-image: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+}
+
+/*Permet de gérer la checkbox et le changement de couleur du cœur lorsque celle-ci est cochée.*/
+.favorite-checkbox {
+  display: none;
+}
+
+.favorite-checkbox:checked + label .far {
+  opacity: 0;
+}
+
+.favorite-checkbox:checked + label .fas {
+  opacity: 1;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(193.33deg, #9356dc -11.44%, #ff79da 123.93%);
+}
+
+/*END OF MENU HEADER*/
+/*MENU CATEGORIES*/
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  padding: 0 13px;
+  gap: 12px;
+  opacity: 0;
+}
+.category__title {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.category__title__underline {
+  display: flex;
+  background-color: #99e2d0;
+  border: none;
+  height: 3px;
+  width: 40px;
+  margin-top: 5px;
+}
+.category__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 69px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+  padding: 13.5px 15px;
+  gap: 5px;
+  cursor: pointer;
+  /* Lorsque la checkbox est cochée, le prix ce décale sur la gauche et le check apparait, avec le "~" je sélectionne tous les éléments .category__card qui suivent l’élément .category__card__toggle, pas seulement le premier.*/
+}
+.category__card__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.category__card__title {
+  font-weight: 500;
+  font-size: 18px;
+}
+.category__card__subtitle {
+  font-weight: 300;
+  font-size: 15px;
+}
+.category__card:hover .category__card__title, .category__card:hover .category__card__subtitle {
+  display: block;
+  overflow: hidden; /*Pour couper le texte qui dépasse.*/
+  text-overflow: ellipsis; /*Pour afficher les "...".*/
+  white-space: nowrap; /*Pour la gestion des espaces*/
+  max-width: 230px; /*Ajoutez une largeur maximale.*/
+}
+.category__card__price {
+  position: absolute;
+  font-weight: 700;
+  font-size: 15px;
+  color: #353535;
+  right: 15px;
+  padding-top: 24px;
+  transition-duration: 0.3s;
+}
+.category__card__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 0 15px 15px 0;
+  right: -100px;
+  background-color: #99e2d0;
+  width: 59px;
+  height: 69px;
+  transition-duration: 0.3s;
+}
+.category__card__check i {
+  font-size: 20px;
+  color: #99e2d0;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+}
+.category__card__toggle {
+  display: none;
+}
+.category__card:hover .category__card__price {
+  position: absolute;
+  right: 65px;
+}
+.category__card:hover .category__card__check {
+  position: absolute;
+  right: 0;
+}
+
+/*.anim1 {
+  animation: onset_time 1s forwards;
+}
+
+.anim2 {
+  animation: onset_time 1s 0.5s forwards;
+}
+
+.anim3 {
+  animation: onset_time 1s 1s forwards;
+}*/
+.anim1 {
+  animation: onset_time 1s 0s forwards;
+}
+
+.anim2 {
+  animation: onset_time 1s 0.5s forwards;
+}
+
+.anim3 {
+  animation: onset_time 1s 1s forwards;
+}
+
+.anim4 {
+  animation: onset_time 1s 1.5s forwards;
+}
+
+/*END OF MENU CATEGORIES*/
+/*BUTTON COMMAND*/
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+.btn__command {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 217px;
+  height: 50px;
+  margin: 40px 0;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #ff79da, #9356dc);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin-bottom: 57px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.btn__command:hover {
+  opacity: 85%;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
+  transition-duration: 0.5s;
+}
+
+
+/*FOOTER*/
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  padding: 22px 25px 22px 25px;
+  gap: 16px;
+}
+footer .logo {
+  color: white;
+  font-family: "Shrikhand";
+  font-size: 18px;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+footer ul li {
+  display: flex;
+  color: white;
+  gap: 11px;
+}
+footer ul li i {
+  position: relative;
+  width: 11px;
+  height: 13px;
+  top: 2px;
+}
+footer ul li a {
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/*MEDIA QUERY*/
+
+@media (min-width: 768px) {
+  /*j'utilise l'attribut initial pour réinitialiser les propriétés à leurs valeur par défaut*/
+  .category__card__toggle:checked ~ .category__card .category__card__title,
+  .category__card__toggle:checked ~ .category__card .category__card__subtitle,
+  .category__card:hover .category__card__title,
+  .category__card:hover .category__card__subtitle {
+    display: initial;
+    overflow: initial;
+    text-overflow: initial;
+    white-space: initial;
+    max-width: initial;
+  }
+}
+/* Media query for screens with a minimum width of 1024px */
+@media (min-width: 1024px) {
+  .menu {
+    margin: -30px 150px 0 150px;
+  }
+  /*BANNER*/
+  .banner__img {
+    height: 383px;
+  }
+  /*Mise en place des éléments du footer en ligne. On applique un row-reverse afin d'inverser le logo avec la liste de liens.*/
+  footer {
+    flex-direction: row-reverse;
+    padding: 30px 25px;
+  }
+  footer .logo {
+    width: 139px;
+    padding-top: 27px;
+  }
+  footer ul {
+    width: 661px;
+    padding-top: 34px;
+    flex-direction: row;
+  }
+  /*On cible les deux premiers éléments li.*/
+  footer ul li:nth-child(-n+2) {
+    width: 190px;
+  }
+  /*On cible les deux derniers éléments li.*/
+  footer ul li:nth-child(n+3) {
+    width: 130px;
+  }
+}
+/* Media query for screens with a minimum width of 1440px */
+@media (min-width: 1440px) {
+  /*Ajout de marges sur la gauche et la droite lorsque la taille de l'écran est supérieure à 1440px.*/
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+  }
+}

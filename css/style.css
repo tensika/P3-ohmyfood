@@ -1,0 +1,513 @@
+@charset "UTF-8";
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap");
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*LOADER*/
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100vh;
+  width: fit-content;
+  font-weight: bold;
+  font-family: "Shrikhand";
+  font-size: 30px;
+  color: transparent;
+  background-color: rgba(255, 255, 255, 0.8);
+  background: linear-gradient(90deg, #9356dc 33.3%, #ff79da 0 66.6%, #99e2d0 0) 0 0/300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: loading 5s infinite cubic-bezier(0.3, 1, 0, 1), fadeOut 0.5s 5.5s forwards;
+}
+
+.loader:before {
+  content: "Loading...";
+}
+
+@keyframes loading {
+  33.3% {
+    background-position: 50% 0;
+  }
+  66.6% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.card a,
+.card a:hover,
+.card a:visited {
+  color: black;
+}
+
+/*Header et location*/
+.header {
+  height: 113px;
+  display: flex;
+  flex-direction: column;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 15px 0;
+  height: 63px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+.header__location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #eaeaea;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: #353535;
+}
+
+main {
+  background-color: #f6f6f6;
+}
+
+/*Information*/
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.info__title {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 39px 42px 0 58px;
+  text-align: center;
+}
+.info__subtitle {
+  margin: 16px 0;
+  font-size: 18px;
+  font-weight: 300;
+  padding-bottom: 27px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 217px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #ff79da, #9356dc);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.25);
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 500;
+  margin-bottom: 57px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 85%;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.35);
+  transition-duration: 0.5s;
+}
+
+/*Fonctionnement*/
+.process__container {
+  background-color: white;
+  padding: 48px 30px 68px 20px;
+}
+
+.process__title {
+  padding-bottom: 26px;
+}
+.process__steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+}
+.process__steps i {
+  color: #7e7e7e;
+  font-size: 20px;
+  margin-right: 25px;
+}
+.process__stage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 24px 0px 24px 25px;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #f6f6f6;
+}
+.process__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  background-color: #9356dc;
+  position: absolute;
+  transform: translateX(-35px);
+}
+.process__ico--color i {
+  color: #9356dc;
+}
+
+/*Restaurants*/
+.restaurants {
+  background-color: #f6f6f6;
+  padding: 54px 18px 66px 17px;
+}
+.restaurants__title {
+  padding-left: 2px;
+}
+.restaurants__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  padding-top: 24px;
+  gap: 18px;
+}
+
+/* card des différents restaurants*/
+.card {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  height: 251px;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  /*On augmente la taille de la carte du restaurant de 1 % lorsque la souris passe dessus.*/
+  transform: scale(1.01);
+}
+.card a {
+  color: black;
+}
+.card__image img {
+  display: flex;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 231px;
+  position: relative;
+  top: -57px;
+}
+.card__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #99e2d0;
+  color: #008766;
+  width: 80px;
+  height: 29px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  top: 13px;
+  right: 10px;
+}
+.card__content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 25px 0 13px;
+  top: -60px;
+}
+.card__txt {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.card__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+.card__subtitle {
+  font-size: 17px;
+  font-weight: 300;
+}
+.card__favorite {
+  position: relative;
+}
+.card__favorite i {
+  position: absolute;
+  right: 25px;
+  top: -93px;
+  font-size: 22px;
+  color: #101010;
+}
+
+/*Permet de gérer la checkbox et le changement de couleur du cœur lorsque celle-ci est cochée.*/
+/* Permet de cacher la checkbox et de la positionné*/
+.favorite-checkbox {
+  display: none;
+  position: absolute;
+  top: -90px;
+  right: 29px;
+}
+
+.favorite {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 25px;
+  /* Lorsque la checkbox est cochée, masque l'icône de cœur vide (favorite-notLiked) et affiche l'icône de cœur plein (favorite-liked) */
+}
+.favorite input[type=checkbox]:checked ~ .favorite-liked {
+  display: inline-block;
+  opacity: 1;
+}
+.favorite input[type=checkbox]:checked ~ .favorite-notLiked {
+  display: none;
+}
+.favorite:hover .favorite-liked {
+  opacity: 1;
+}
+
+.favorite-notLiked {
+  position: absolute;
+}
+
+.favorite-liked {
+  position: relative;
+  background: linear-gradient(160deg, #ff79da 0%, #9356dc 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 300ms ease-in-out;
+  opacity: 0;
+}
+
+/*FOOTER*/
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #353535;
+  padding: 22px 25px 22px 25px;
+  gap: 16px;
+}
+footer .logo {
+  color: white;
+  font-family: "Shrikhand";
+  font-size: 18px;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+footer ul li {
+  display: flex;
+  color: white;
+  gap: 11px;
+}
+footer ul li i {
+  position: relative;
+  width: 11px;
+  height: 13px;
+  top: 2px;
+}
+footer ul li a {
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .info__title {
+    font-size: 30px;
+  }
+  /* passage de la section fonctionnement de la disposition en colonne à la disposition en ligne*/
+  .process__steps {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
+  .process__stage {
+    width: 320px;
+  }
+}
+@media (min-width: 820px) {
+  /*Passage de la section restaurants sur deux colonnes et deux lignes + modification de l'espacement entre les cards.*/
+  .restaurants {
+    padding: 30px auto;
+  }
+  .restaurants__cards {
+    grid-template: 1fr 1fr/1fr 1fr; /* Avant le "/", cela correspond à "grid-template-rows" donc 2 lignes, et après le "/", cela correspond à "grid-template-columns" donc 2 colonnes.*/
+    gap: 50px 50px; /*La première valeur correspond au gap vertical et la seconde au gap horizontal.*/
+  }
+  .card {
+    min-width: 290px;
+  }
+}
+@media (min-width: 1024px) {
+  /*Augmentation de la taille du titre de la section info.*/
+  .info__title {
+    font-size: 40px;
+  }
+  /*Passage de la section restaurants sur deux colonnes et deux lignes + modification de l'espacement entre les cards.*/
+  .restaurants {
+    padding: 30px 180px;
+  }
+  .restaurants__cards {
+    grid-template: 1fr 1fr/1fr 1fr; /* Avant le "/", cela correspond à "grid-template-rows" donc 2 lignes, et après le "/", cela correspond à "grid-template-columns" donc 2 colonnes.*/
+    gap: 50px 100px; /*La première valeur correspond au gap vertical et la seconde au gap horizontal.*/
+  }
+  /*Réduction de la marge sous le bouton de la section info.*/
+  .btn {
+    margin-bottom: 30px;
+  }
+  /*Ajout de marges pour la section fonctionnement ainsi que modification de l'espace entre les trois "stages".*/
+  .process__container {
+    padding: 50px 180px;
+  }
+  .process__steps {
+    gap: 50px;
+  }
+  /*Mise en place des éléments du footer en ligne. On applique un row-reverse afin d'inverser le logo avec la liste de liens.*/
+  footer {
+    flex-direction: row-reverse;
+    padding: 30px 25px;
+  }
+  footer .logo {
+    width: 139px;
+    padding-top: 27px;
+  }
+  footer ul {
+    width: 661px;
+    padding-top: 34px;
+    flex-direction: row;
+  }
+  /*On cible les deux premiers éléments li.*/
+  footer ul li:nth-child(-n+2) {
+    width: 190px;
+  }
+  /*On cible les deux derniers éléments li.*/
+  footer ul li:nth-child(n+3) {
+    width: 130px;
+  }
+}
+/*Ajout de marges sur la gauche et la droite lorsque la taille de l'écran est supérieure à 1440px.*/
+@media (min-width: 1440px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+  }
+}

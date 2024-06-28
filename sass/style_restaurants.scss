@@ -1,0 +1,370 @@
+@import "libs/reset.scss";
+@import "libs/variable.scss";
+@import "libs/mixins.scss";
+
+@keyframes onset_time {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  font-family: $font-family, sans-serif;
+}
+
+/*Header*/
+.header {
+  @include flexcenter;
+  height: 63px;
+  box-shadow: 0 2px 4px 0 $shadow15;
+  position: relative;
+  &__back {
+    position: absolute;
+    left: 0;
+    font-size: 30px;
+    padding: 17px 0 16px 17px;
+    color: black;
+  }
+  &__logo {
+    display: flex;
+  }
+}
+
+/*END OF HEADER*/
+/*MAIN*/
+main {
+  background-color: white;
+}
+/*BANNER*/
+.banner {
+  &__img {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+  }
+}
+/*END OF BANNER*/
+/*MENU*/
+.menu {
+  border-radius: 40px 40px 0 0;
+  position: relative;
+  margin-top: -55px;
+  background-color: $background-color;
+  z-index: 10;
+  /*MENU HEADER*/
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 31px 17px 42px 17px;
+  }
+  &__title {
+    font-size: $font-size-title-menu;
+    font-family: $font-family2;
+  }
+  &__favorite {
+    margin-top: -20px;
+    & i {
+      position: absolute;
+      right: 24px;
+      font-size: 22px;
+      color: #101010;
+    }
+    .fas {
+      opacity: 0;
+      &:hover {
+        /*pour avoir la couleur sur le cœur au passage de la souris ou du stylet.*/
+        opacity: 1;
+        color: transparent; /*Cela me permet de rendre la couleur noire du cœur transparente.*/
+        background-clip: text; /*Grâce à cette propriété, j'ai pu limiter l'affichage du dégradé au texte, dans ce cas-ci juste pour remplir le cœur.*/
+        background-image: linear-gradient(
+          193.33deg,
+          #9356dc -11.44%,
+          #ff79da 123.93%
+        );
+      }
+    }
+  }
+}
+
+/*Permet de gérer la checkbox et le changement de couleur du cœur lorsque celle-ci est cochée.*/
+.favorite-checkbox {
+  display: none;
+}
+
+.favorite-checkbox:checked + label .far {
+  opacity: 0;
+}
+
+.favorite-checkbox:checked + label .fas {
+  opacity: 1;
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    193.33deg,
+    #9356dc -11.44%,
+    #ff79da 123.93%
+  );
+}
+/*END OF MENU HEADER*/
+
+/*MENU CATEGORIES*/
+
+.categories {
+  @include flexcolumn;
+  gap: 40px;
+  overflow: hidden;
+}
+.category {
+  @include flexcolumn;
+  padding: 0 13px;
+  gap: 12px;
+  opacity: 0;
+  &__title {
+    font-size: $font-size-text;
+    font-weight: $font-weight-light;
+    text-transform: uppercase;
+    &__underline {
+      display: flex;
+      background-color: $tertiary-color;
+      border: none;
+      height: 3px;
+      width: 40px;
+      margin-top: 5px;
+    }
+  }
+  &__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 69px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 4px 15px 0 $shadow10;
+    padding: 13.5px 15px;
+    gap: 5px;
+    cursor: pointer;
+    &__titles {
+      @include flexcolumn;
+      gap: 5px;
+    }
+    &__title {
+      font-weight: $font-weight-medium;
+      font-size: $font-size-subtitle;
+    }
+
+    &__subtitle {
+      font-weight: $font-weight-light;
+      font-size: $font-size-subtitle-menu;
+    }
+
+    // &__toggle:checked ~ & &__title,
+    // &__toggle:checked ~ & &__subtitle,
+    &:hover &__title,
+    &:hover &__subtitle {
+      display: block;
+      overflow: hidden; /*Pour couper le texte qui dépasse.*/
+      text-overflow: ellipsis; /*Pour afficher les "...".*/
+      white-space: nowrap; /*Pour la gestion des espaces*/
+      max-width: 230px; /*Ajoutez une largeur maximale.*/
+    }
+    &__price {
+      position: absolute;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-subtitle-menu;
+      color: $footer-color;
+      right: 15px;
+      padding-top: 24px;
+      transition-duration: 0.3s;
+    }
+    &__check {
+      @include flexcenter;
+      position: absolute;
+      border-radius: 0 15px 15px 0;
+      right: -100px;
+      background-color: $tertiary-color;
+      width: 59px;
+      height: 69px;
+      transition-duration: 0.3s;
+    }
+    &__check i {
+      font-size: 20px;
+      color: $tertiary-color;
+      background-color: white;
+      border-radius: 50%;
+      border: none;
+    }
+    &__toggle {
+      display: none;
+    }
+    /* Lorsque la checkbox est cochée, le prix ce décale sur la gauche et le check apparait, avec le "~" je sélectionne tous les éléments .category__card qui suivent l’élément .category__card__toggle, pas seulement le premier.*/
+    // &__toggle:checked ~ & &__price {
+    //   position: absolute;
+    //   right: 65px;
+    // }
+    // &__toggle:checked ~ & &__check {
+    //   position: absolute;
+    //   right: 0;
+    // }
+
+    &:hover &__price {
+      position: absolute;
+      right: 65px;
+    }
+    &:hover &__check {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+/*.anim1 {
+  animation: onset_time 1s forwards;
+}
+
+.anim2 {
+  animation: onset_time 1s 0.5s forwards;
+}
+
+.anim3 {
+  animation: onset_time 1s 1s forwards;
+}*/
+
+// On utilise une boucle "@for" pour itérer de 1 à 3 (les 3 .anim du dessus).
+// On génère les règles CSS ".anim#{$i}", où "$i" prend les valeurs 1 puis 2 puis enfin 3.
+// Ensuite on utilise "#{0.5s * ($i - 1)}" pour calculer le délai de l'animation qui augmente de 0.5s à chaque itération.
+
+@for $i from 1 through 4 {
+  .anim#{$i} {
+    animation: onset_time 1s #{0.5s * ($i - 1)} forwards;
+  }
+}
+
+/*END OF MENU CATEGORIES*/
+/*BUTTON COMMAND*/
+.btn {
+  @include flexcenter;
+  opacity: 0;
+  &__command {
+    @include flexcenter;
+    width: 217px;
+    height: 50px;
+    margin: 40px 0;
+    border-radius: 25px;
+    background: linear-gradient(180deg, $secondary-color, $primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px 0 $shadow25;
+    font-size: $font-size-text;
+    font-family: $font-family;
+    font-weight: $font-weight-medium;
+    margin-bottom: 57px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    &:hover {
+      opacity: 85%;
+      box-shadow: 0 4px 15px 0 $shadow35;
+      transition-duration: 0.5s;
+    }
+  }
+}
+/*END OF BUTTON COMMAND*/
+/*FOOTER*/
+footer {
+  @include flexcolumn;
+  background-color: $footer-color;
+  padding: 22px 25px 22px 25px;
+  gap: 16px;
+  & .logo {
+    color: white;
+    font-family: $font-family2;
+    font-size: $font-size-subtitle;
+  }
+  & ul {
+    @include flexcolumn;
+    gap: 7px;
+    & li {
+      display: flex;
+      color: white;
+      gap: 11px;
+      & i {
+        position: relative;
+        width: 11px;
+        height: 13px;
+        top: 2px;
+      }
+      & a {
+        color: white;
+        font-weight: $font-weight-medium;
+        font-size: $font-size-text;
+      }
+    }
+  }
+}
+/*END OF FOOTER*/
+/*MEDIA QUERY*/
+/* Media query for screens with a minimum width of 768px */
+@media (min-width: 768px) {
+  /*j'utilise l'attribut initial pour réinitialiser les propriétés à leurs valeur par défaut*/
+  .category__card__toggle:checked ~ .category__card .category__card__title,
+  .category__card__toggle:checked ~ .category__card .category__card__subtitle,
+  .category__card:hover .category__card__title,
+  .category__card:hover .category__card__subtitle {
+    display: initial;
+    overflow: initial;
+    text-overflow: initial;
+    white-space: initial;
+    max-width: initial;
+  }
+}
+/* Media query for screens with a minimum width of 1024px */
+
+@media (min-width: 1024px) {
+  .menu {
+    margin: -30px 150px 0 150px;
+  }
+
+  /*BANNER*/
+  .banner {
+    &__img {
+      height: 383px;
+    }
+  }
+  /*Mise en place des éléments du footer en ligne. On applique un row-reverse afin d'inverser le logo avec la liste de liens.*/
+  footer {
+    flex-direction: row-reverse;
+    padding: 30px 25px;
+  }
+  footer .logo {
+    width: 139px;
+    padding-top: 27px;
+  }
+  footer ul {
+    width: 661px;
+    padding-top: 34px;
+    flex-direction: row;
+  }
+
+  /*On cible les deux premiers éléments li.*/
+  footer ul li:nth-child(-n + 2) {
+    width: 190px;
+  }
+  /*On cible les deux derniers éléments li.*/
+  footer ul li:nth-child(n + 3) {
+    width: 130px;
+  }
+}
+/* Media query for screens with a minimum width of 1440px */
+
+@media (min-width: 1440px) {
+  /*Ajout de marges sur la gauche et la droite lorsque la taille de l'écran est supérieure à 1440px.*/
+  body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+  }
+}
